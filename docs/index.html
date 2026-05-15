@@ -150,6 +150,30 @@
       animation: fadeUp var(--anim-slow) 0.4s ease both;
     }
     .hero-meta span { color: var(--terra); }
+    /* Hero log */
+    .hero-log {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 280px;
+      overflow: hidden;
+      opacity: 0.07;
+      pointer-events: none;
+      user-select: none;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+    .hero-log-track {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      line-height: 1.95;
+      color: var(--ink);
+      white-space: nowrap;
+      animation: logScroll 50s linear infinite;
+    }
+    @keyframes logScroll {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-50%); }
+    }
 
     /* SECTIONS */
     .section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
@@ -822,6 +846,7 @@
     @media (max-width: 800px) {
       nav { padding: 1.1rem 1.5rem; }
       .nav-links a:not(.nav-cta) { display: none; }
+      .hero-log { display: none; }
       .hero { padding: 8rem 1.5rem 4rem; }
       .hero-meta { display: none; }
       .section { padding: 5rem 1.5rem; }
@@ -868,6 +893,110 @@
     <div class="hero-actions">
       <a href="#work" class="btn btn-filled">See selected work</a>
       <a href="#contact" class="btn btn-outline">Start a project</a>
+    </div>
+    <div class="hero-log" aria-hidden="true">
+      <div class="hero-log-track">
+        <div>[08:14] server started · port 3000</div>
+        <div>[08:14] db connected</div>
+        <div>[08:15] GET /api/data · 200 · 42ms</div>
+        <div>[08:15] 312 records indexed</div>
+        <div>[08:16] cron triggered · 0 skipped</div>
+        <div>[08:16] cache warmed</div>
+        <div>[08:17] POST /api/submit · 201 · 18ms</div>
+        <div>[08:17] webhook dispatched</div>
+        <div>[08:18] build started</div>
+        <div>[08:18] 0 errors · 0 warnings</div>
+        <div>[08:18] build ok · 2.1s</div>
+        <div>[08:19] deploy → production</div>
+        <div>[08:19] health check · ok</div>
+        <div>[08:20] GET /api/report · 200 · 67ms</div>
+        <div>[08:20] delta computed</div>
+        <div>[08:21] sheet sync complete</div>
+        <div>[08:21] 94 rows inserted</div>
+        <div>[08:22] email queued · 4 recipients</div>
+        <div>[08:22] sent · 200</div>
+        <div>[08:23] GET /api/jobs · 200 · 31ms</div>
+        <div>[08:23] 18 new results</div>
+        <div>[08:24] script complete · 1.3s</div>
+        <div>[08:24] 0 warnings</div>
+        <div>[08:25] analytics refreshed</div>
+        <div>[08:25] 6 events logged</div>
+        <div>[08:26] GET /api/feed · 200 · 55ms</div>
+        <div>[08:26] 47 items parsed</div>
+        <div>[08:27] notification sent</div>
+        <div>[08:27] queue drained</div>
+        <div>[08:28] POST /api/ingest · 201 · 23ms</div>
+        <div>[08:28] 103 records processed</div>
+        <div>[08:29] cron triggered</div>
+        <div>[08:29] no changes detected</div>
+        <div>[08:30] GET /api/status · 200 · 9ms</div>
+        <div>[08:30] uptime 99.9%</div>
+        <div>[08:31] backup complete</div>
+        <div>[08:31] 0 errors</div>
+        <div>[08:32] POST /api/sync · 200 · 44ms</div>
+        <div>[08:32] 28 updates applied</div>
+        <div>[08:33] build started</div>
+        <div>[08:33] bundle optimised · 248kb</div>
+        <div>[08:33] build ok · 1.8s</div>
+        <div>[08:34] deploy → staging</div>
+        <div>[08:34] smoke test passed</div>
+        <div>[08:35] GET /api/metrics · 200 · 38ms</div>
+        <div>[08:35] chart data ready</div>
+        <div>[08:36] cache invalidated</div>
+        <div>[08:36] 512 items refreshed</div>
+        <div>[08:37] webhook received · ok</div>
+        <div>[08:37] pipeline complete</div>
+        <div>[08:14] server started · port 3000</div>
+        <div>[08:14] db connected</div>
+        <div>[08:15] GET /api/data · 200 · 42ms</div>
+        <div>[08:15] 312 records indexed</div>
+        <div>[08:16] cron triggered · 0 skipped</div>
+        <div>[08:16] cache warmed</div>
+        <div>[08:17] POST /api/submit · 201 · 18ms</div>
+        <div>[08:17] webhook dispatched</div>
+        <div>[08:18] build started</div>
+        <div>[08:18] 0 errors · 0 warnings</div>
+        <div>[08:18] build ok · 2.1s</div>
+        <div>[08:19] deploy → production</div>
+        <div>[08:19] health check · ok</div>
+        <div>[08:20] GET /api/report · 200 · 67ms</div>
+        <div>[08:20] delta computed</div>
+        <div>[08:21] sheet sync complete</div>
+        <div>[08:21] 94 rows inserted</div>
+        <div>[08:22] email queued · 4 recipients</div>
+        <div>[08:22] sent · 200</div>
+        <div>[08:23] GET /api/jobs · 200 · 31ms</div>
+        <div>[08:23] 18 new results</div>
+        <div>[08:24] script complete · 1.3s</div>
+        <div>[08:24] 0 warnings</div>
+        <div>[08:25] analytics refreshed</div>
+        <div>[08:25] 6 events logged</div>
+        <div>[08:26] GET /api/feed · 200 · 55ms</div>
+        <div>[08:26] 47 items parsed</div>
+        <div>[08:27] notification sent</div>
+        <div>[08:27] queue drained</div>
+        <div>[08:28] POST /api/ingest · 201 · 23ms</div>
+        <div>[08:28] 103 records processed</div>
+        <div>[08:29] cron triggered</div>
+        <div>[08:29] no changes detected</div>
+        <div>[08:30] GET /api/status · 200 · 9ms</div>
+        <div>[08:30] uptime 99.9%</div>
+        <div>[08:31] backup complete</div>
+        <div>[08:31] 0 errors</div>
+        <div>[08:32] POST /api/sync · 200 · 44ms</div>
+        <div>[08:32] 28 updates applied</div>
+        <div>[08:33] build started</div>
+        <div>[08:33] bundle optimised · 248kb</div>
+        <div>[08:33] build ok · 1.8s</div>
+        <div>[08:34] deploy → staging</div>
+        <div>[08:34] smoke test passed</div>
+        <div>[08:35] GET /api/metrics · 200 · 38ms</div>
+        <div>[08:35] chart data ready</div>
+        <div>[08:36] cache invalidated</div>
+        <div>[08:36] 512 items refreshed</div>
+        <div>[08:37] webhook received · ok</div>
+        <div>[08:37] pipeline complete</div>
+      </div>
     </div>
   </div>
 
