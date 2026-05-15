@@ -111,14 +111,14 @@
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 5.5vw, 5.6rem);
+      font-size: clamp(1.9rem, 4.5vw, 4.6rem);
       font-weight: 400; line-height: 1.05;
       letter-spacing: -0.025em; margin-bottom: 2rem;
       animation: fadeUp var(--anim-slow) 0.1s ease both;
       max-width: 14ch;
       text-wrap: balance;
     }
-    .hero h1 em { font-style: italic; color: var(--green-deep); }
+
     .hero-bio {
       font-size: 1.12rem; font-weight: 300; line-height: 1.75;
       color: var(--ink-mid); max-width: 580px; margin-bottom: 3rem;
@@ -940,7 +940,7 @@
   </nav>
 
   <div class="hero" data-screen-label="00 Hero">
-    <h1>Marketing, websites, and the <em>in-between tools</em> most agencies skip.</h1>
+    <h1>Marketing, websites, and the in-between tools most agencies skip.</h1>
     <p class="hero-bio">I build websites, automation, and internal tools for service businesses that have outgrown templates.</p>
     <div class="hero-actions">
       <a href="#work" class="btn btn-filled">See selected work</a>
@@ -1496,42 +1496,6 @@ window.CASE_STUDIES = CASE_STUDIES;
 /* Portfolio interactions: reveals · drawer · tweaks · form */
 
 (function () {
-  /* ---------- TYPEWRITER (first visit only) ---------- */
-  const heroH1 = document.querySelector('.hero h1');
-  if (heroH1 && !localStorage.getItem('hero-typed')) {
-    localStorage.setItem('hero-typed', '1');
-    const segments = [
-      { text: 'Marketing, websites, and the ', em: false },
-      { text: 'in-between tools', em: true },
-      { text: ' most agencies skip.', em: false },
-    ];
-    heroH1.innerHTML = '';
-    heroH1.style.animation = 'none';
-    heroH1.style.opacity = '1';
-    const nodeRefs = segments.map((seg) => {
-      if (seg.em) {
-        const el = document.createElement('em');
-        heroH1.appendChild(el);
-        return { el, text: seg.text, isEl: true };
-      } else {
-        const tn = document.createTextNode('');
-        heroH1.appendChild(tn);
-        return { el: tn, text: seg.text, isEl: false };
-      }
-    });
-    let segIdx = 0, charIdx = 0;
-    function tick() {
-      if (segIdx >= nodeRefs.length) return;
-      const ref = nodeRefs[segIdx];
-      if (ref.isEl) ref.el.textContent += ref.text[charIdx];
-      else ref.el.nodeValue += ref.text[charIdx];
-      charIdx++;
-      if (charIdx >= ref.text.length) { segIdx++; charIdx = 0; }
-      setTimeout(tick, 40);
-    }
-    setTimeout(tick, 500);
-  }
-
   /* ---------- REVEAL ON SCROLL ---------- */
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries) => {
