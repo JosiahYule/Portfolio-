@@ -1492,14 +1492,6 @@ window.CASE_STUDIES = CASE_STUDIES;
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
   });
-    try {
-      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: value } }, '*');
-    } catch (_) {}
-  }
-
-
-
-
   /* ---------- FORM ---------- */
   const form       = document.getElementById('contactForm');
   const submitBtn  = document.getElementById('submitBtn');
