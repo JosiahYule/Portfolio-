@@ -812,83 +812,6 @@
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity var(--anim-slow) ease, transform var(--anim-slow) ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* Tweaks panel */
-    .tweaks-toggle {
-      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 95;
-      background: var(--ink); color: var(--white);
-      border: none; cursor: pointer;
-      padding: 0.75rem 1.25rem;
-      border-radius: 2rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.78rem; font-weight: 500;
-      letter-spacing: 0.04em;
-      box-shadow: var(--shadow-md);
-      display: none;
-    }
-    .tweaks-toggle.visible { display: inline-flex; align-items: center; gap: 0.45rem; }
-    .tweaks-toggle::before { content: '⚙'; }
-
-    .tweaks-panel {
-      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 96;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      width: 280px;
-      box-shadow: var(--shadow-lg);
-      display: none;
-      flex-direction: column;
-      gap: 1.25rem;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .tweaks-panel.open { display: flex; }
-    .tweaks-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-bottom: 0.85rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .tweaks-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; font-weight: 400;
-    }
-    .tweaks-close {
-      width: 26px; height: 26px;
-      border: none; background: var(--cream-deep);
-      border-radius: 50%; cursor: pointer;
-      color: var(--ink-mid);
-      font-size: 1rem; line-height: 1; padding: 0;
-    }
-    .tweaks-section-label {
-      font-size: 0.62rem; font-weight: 500;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 0.5rem;
-    }
-    .tweaks-radio {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 0.25rem;
-      background: var(--cream-deep);
-      padding: 0.25rem;
-      border-radius: 0.65rem;
-    }
-    .tweaks-radio button {
-      border: none; background: transparent;
-      padding: 0.45rem 0.5rem;
-      font-family: inherit;
-      font-size: 0.74rem;
-      color: var(--ink-mid);
-      cursor: pointer;
-      border-radius: 0.45rem;
-      transition: all var(--anim-fast);
-      text-transform: capitalize;
-    }
-    .tweaks-radio button.active {
-      background: var(--white);
-      color: var(--ink);
-      box-shadow: var(--shadow-sm);
-      font-weight: 500;
-    }
-
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -958,9 +881,9 @@
       </div>
       <div class="about-body">
         <div class="section-num reveal">01 · About</div>
-        <h2 class="section-title reveal" style="margin-bottom: 1.75rem; font-weight: 400">Marketing professional who <em>builds things.</em></h2>
-        <p class="reveal">I work across digital marketing, web development, and custom tooling for a group of recruitment agencies in Atlantic Canada. My day-to-day sits somewhere between strategy and execution, writing copy, building job boards, wiring APIs, and shipping dashboards that replace manual processes.</p>
-        <p class="reveal" style="margin-bottom: 1.25rem;">Currently working toward full stack freelance.</p>
+        <h2 class="section-title reveal" style="margin-bottom: 1.75rem; font-weight: 400">Marketing, development, and the stuff in between.</h2>
+        <p class="reveal">I design and build websites, internal tools, and custom automations for businesses in Atlantic Canada. Right now that means three branded recruitment websites, a job intelligence platform that has sent over 6,000 alerts across 1,800+ clients in its first month, and a live marketing dashboard that replaced a manual monthly reporting process.</p>
+        <p class="reveal" style="margin-bottom: 1.25rem;">My background is in marketing. Most of what I build sits at the intersection of the two: things a developer wouldn't think to build and a marketer wouldn't know how to.</p>
 
         <div class="reveal" style="margin-top: 2rem;">
           <div class="stack-label">What I work with</div>
@@ -1095,8 +1018,8 @@
         </div>
         <div class="work-outcome">
           <div class="work-outcome-label">Scale</div>
-          <div class="work-outcome-value">1,684</div>
-          <div class="work-outcome-caption">Clients monitored continuously across three agencies</div>
+          <div class="work-outcome-value">6,000+</div>
+          <div class="work-outcome-caption">Alerts sent since launching one month ago</div>
         </div>
       </div>
 
@@ -1197,34 +1120,7 @@
     <div class="drawer-scroll" id="drawerScroll"></div>
   </aside>
 
-  <!-- TWEAKS -->
-  <button class="tweaks-toggle" id="tweaksToggle" aria-label="Open tweaks">Tweaks</button>
-  <div class="tweaks-panel" id="tweaksPanel">
-    <div class="tweaks-header">
-      <div class="tweaks-title">Tweaks</div>
-      <button class="tweaks-close" id="tweaksClose">✕</button>
-    </div>
-    <div>
-      <div class="tweaks-section-label">Pop-out style</div>
-      <div class="tweaks-radio" data-tweak="popoutStyle">
-        <button data-value="drawer">Drawer</button>
-        <button data-value="modal">Modal</button>
-        <button data-value="fullscreen">Full</button>
-      </div>
-    </div>
-    <div>
-      <div class="tweaks-section-label">Animation</div>
-      <div class="tweaks-radio" data-tweak="animation">
-        <button data-value="subtle">Subtle</button>
-        <button data-value="smooth">Smooth</button>
-        <button data-value="dramatic">Dramatic</button>
-      </div>
-    </div>
-  </div>
 
-  <script>
-    const TWEAK_DEFAULTS = { "popoutStyle": "fullscreen", "animation": "smooth" };
-  </script>
   <script>
 /* Case study content + renderers */
 
@@ -1340,7 +1236,7 @@ const CASE_STUDIES = {
         title: 'How it works',
         body: `
           <p>Every two hours during business hours (Monday through Friday, 7am to 7pm AST), ClientWatch runs three scanners simultaneously against <strong>Job Bank Canada, LinkedIn, and Adzuna</strong>. Each scanner pulls all postings from Nova Scotia, New Brunswick, PEI, and Newfoundland.</p>
-          <p>Each posting is compared against <strong>1,684 companies</strong> across all three agencies. Matching normalizes both sides: strip legal suffixes, remove punctuation, lowercase everything. An exact match scores 100% confidence; a containment match scores 85%. Anything below is discarded. Generic terms and government bodies are pre-filtered to eliminate false positives.</p>
+          <p>Each posting is compared against <strong>1,800+ companies</strong> across all three agencies. Matching normalizes both sides: strip legal suffixes, remove punctuation, lowercase everything. An exact match scores 100% confidence; a containment match scores 85%. Anything below is discarded. Generic terms and government bodies are pre-filtered to eliminate false positives.</p>
           <p>When a match is confirmed, a <strong>Slack notification</strong> fires to the relevant agency's channel (province-routed for Accountant and Administrative Staffing), and the alert queues for the <strong>7am morning digest email</strong>.</p>
         `,
         extras: '',
@@ -1596,78 +1492,13 @@ window.CASE_STUDIES = CASE_STUDIES;
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
   });
-
-  /* ---------- TWEAKS PANEL ---------- */
-  const tweaksToggle = document.getElementById('tweaksToggle');
-  const tweaksPanel  = document.getElementById('tweaksPanel');
-  const tweaksClose  = document.getElementById('tweaksClose');
-
-  let tweaks = JSON.parse(JSON.stringify(window.TWEAK_DEFAULTS || { popoutStyle: 'drawer', animation: 'smooth' }));
-
-  function applyTweaks() {
-    // Pop-out style
-    drawer.classList.remove('style-drawer', 'style-modal', 'style-fullscreen');
-    drawer.classList.add(`style-${tweaks.popoutStyle}`);
-
-    // Animation speed
-    const root = document.documentElement;
-    const map = {
-      subtle:    { fast: '0.18s', med: '0.32s', slow: '0.6s' },
-      smooth:    { fast: '0.25s', med: '0.5s',  slow: '0.85s' },
-      dramatic:  { fast: '0.35s', med: '0.75s', slow: '1.2s' },
-    };
-    const a = map[tweaks.animation] || map.smooth;
-    root.style.setProperty('--anim-fast', a.fast);
-    root.style.setProperty('--anim-med', a.med);
-    root.style.setProperty('--anim-slow', a.slow);
-
-    // Update active state in radio buttons
-    document.querySelectorAll('.tweaks-radio').forEach((radio) => {
-      const key = radio.dataset.tweak;
-      radio.querySelectorAll('button').forEach((b) => {
-        b.classList.toggle('active', b.dataset.value === tweaks[key]);
-      });
-    });
-  }
-
-  function setTweak(key, value) {
-    tweaks[key] = value;
-    applyTweaks();
     try {
       window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: value } }, '*');
     } catch (_) {}
   }
 
-  document.querySelectorAll('.tweaks-radio').forEach((radio) => {
-    const key = radio.dataset.tweak;
-    radio.querySelectorAll('button').forEach((b) => {
-      b.addEventListener('click', () => setTweak(key, b.dataset.value));
-    });
-  });
 
-  // Edit-mode protocol
-  window.addEventListener('message', (e) => {
-    if (e.data?.type === '__activate_edit_mode') {
-      tweaksPanel.classList.add('open');
-      tweaksToggle.classList.remove('visible');
-    }
-    if (e.data?.type === '__deactivate_edit_mode') {
-      tweaksPanel.classList.remove('open');
-      tweaksToggle.classList.remove('visible');
-    }
-  });
-  try {
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-  } catch (_) {}
 
-  tweaksClose.addEventListener('click', () => {
-    tweaksPanel.classList.remove('open');
-    try {
-      window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
-    } catch (_) {}
-  });
-
-  applyTweaks();
 
   /* ---------- FORM ---------- */
   const form       = document.getElementById('contactForm');
