@@ -7,6 +7,15 @@
   <title>Josiah Yule | Marketing, websites and custom tools</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Josiah Yule builds websites, automation, and internal tools for service businesses that have outgrown templates. Based in Halifax, NS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.josiahyule.ca">
+  <meta property="og:title" content="Josiah Yule | Marketing, websites and custom tools">
+  <meta property="og:description" content="Josiah Yule builds websites, automation, and internal tools for service businesses that have outgrown templates.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Josiah Yule | Marketing, websites and custom tools">
+  <meta name="twitter:description" content="Josiah Yule builds websites, automation, and internal tools for service businesses that have outgrown templates.">
+  <link rel="canonical" href="https://www.josiahyule.ca">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -69,12 +78,12 @@
       letter-spacing: 0.04em; color: var(--ink-mid); transition: color var(--anim-fast);
     }
     .nav-links a:hover { color: var(--terra); }
-    .nav-cta {
-      background: var(--terra) !important;
-      color: var(--white) !important;
-      padding: 0.5rem 1.3rem; border-radius: 2rem; font-weight: 500 !important;
+    .nav-links a.nav-cta {
+      background: var(--terra);
+      color: var(--white);
+      padding: 0.5rem 1.3rem; border-radius: 2rem; font-weight: 500;
     }
-    .nav-cta:hover { background: var(--terra-dark) !important; }
+    .nav-links a.nav-cta:hover { background: var(--terra-dark); }
 
     /* HERO */
     .hero {
@@ -103,7 +112,7 @@
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.2rem, 5.5vw, 5.6rem);
-      font-weight: 600; line-height: 1.05;
+      font-weight: 400; line-height: 1.05;
       letter-spacing: -0.025em; margin-bottom: 2rem;
       animation: fadeUp var(--anim-slow) 0.1s ease both;
       max-width: 14ch;
@@ -152,7 +161,7 @@
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 600; line-height: 1.15;
+      font-weight: 400; line-height: 1.15;
       letter-spacing: -0.015em;
     }
     .section-title em { font-style: italic; color: var(--green-deep); }
@@ -285,7 +294,7 @@
     .service-hero h3 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.4rem, 4vw, 3.6rem);
-      font-weight: 600; line-height: 1.02;
+      font-weight: 400; line-height: 1.02;
       letter-spacing: -0.02em;
       color: var(--ink);
       margin-bottom: 2rem;
@@ -428,7 +437,7 @@
     .work-body h3 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.6rem, 2.4vw, 2.1rem);
-      font-weight: 600; line-height: 1.15;
+      font-weight: 400; line-height: 1.15;
       letter-spacing: -0.01em;
       color: var(--ink);
       margin-bottom: 1.25rem;
@@ -908,6 +917,16 @@
       .form-row { grid-template-columns: 1fr; }
       .cs-gallery { grid-template-columns: 1fr; }
     }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-bio { font-size: 1rem; }
+      .hero-actions { flex-direction: column; }
+      .btn { text-align: center; }
+      .service-hero { padding: 2rem 1.25rem; }
+      .section-title { font-size: 1.75rem; }
+      .work-num { display: none; }
+      nav { padding: 1rem 1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -923,7 +942,7 @@
   </nav>
 
   <div class="hero" data-screen-label="00 Hero">
-    <h1 style="font-weight: 400">Marketing, websites, and the <em>in-between tools</em> most agencies skip.</h1>
+    <h1>Marketing, websites, and the <em>in-between tools</em> most agencies skip.</h1>
     <p class="hero-bio">I build websites, automation, and internal tools for service businesses that have outgrown templates.</p>
     <div class="hero-actions">
       <a href="#work" class="btn btn-filled">See selected work</a>
@@ -969,7 +988,7 @@
     <div class="services-inner">
       <div class="section-header reveal">
         <div class="section-num">02 · Services</div>
-        <h2 class="section-title" style="font-weight: 400">What I offer.</h2>
+        <h2 class="section-title">What I offer.</h2>
       </div>
 
       <div class="service-hero reveal">
@@ -979,7 +998,7 @@
 
         <div class="service-hero-grid">
           <div>
-            <h3 style="font-weight: 400">Website<br/>Development.</h3>
+            <h3>Website<br/>Development.</h3>
             <p class="service-hero-lede">A good website is still one of the highest-leverage investments a small business can make.</p>
             <p class="service-hero-body">I build websites from scratch for businesses that have outgrown templates. Every project is designed around how your customers actually find and evaluate you, not what a theme can do out of the box.</p>
             <a href="#contact" class="service-hero-cta">Start a project</a>
@@ -1043,15 +1062,15 @@
   <div class="section" id="work" data-screen-label="03 Work">
     <div class="section-header reveal">
       <div class="section-num">03 · Work</div>
-      <h2 class="section-title" style="font-weight: 400">Selected <em>projects.</em></h2>
+      <h2 class="section-title">Selected <em>projects.</em></h2>
     </div>
 
     <div class="work-list">
 
-      <div class="work-entry reveal" data-case="staffing" role="button" tabindex="0">
+      <div class="work-entry reveal" data-case="staffing" role="button" tabindex="0" aria-expanded="false" aria-label="View Three recruitment websites case study">
         <div class="work-num">i.</div>
         <div class="work-body">
-          <h3 style="font-weight: 400">Three recruitment websites.</h3>
+          <h3>Three recruitment websites.</h3>
           <p>Designed and built three separate branded websites for a group of Atlantic Canadian recruitment agencies. Each one runs on Squarespace with fully custom HTML, CSS, and JavaScript. Live job boards pull from external APIs, and the sites share a visual system while keeping each brand distinct.</p>
           <div class="work-links" data-stop-click>
             <a class="work-link" href="https://integratedstaffing.ca" target="_blank" rel="noopener">integratedstaffing.ca</a>
@@ -1067,10 +1086,10 @@
         </div>
       </div>
 
-      <div class="work-entry reveal" data-case="clientwatch" role="button" tabindex="0">
+      <div class="work-entry reveal" data-case="clientwatch" role="button" tabindex="0" aria-expanded="false" aria-label="View ClientWatch case study">
         <div class="work-num">ii.</div>
         <div class="work-body">
-          <h3 style="font-weight: 400">ClientWatch.</h3>
+          <h3>ClientWatch.</h3>
           <p>An internal job intelligence platform that monitors job boards across Atlantic Canada and alerts recruiters when an existing client posts a new role. It catches hiring activity that most CRMs miss. Built in Node and hosted on Railway.</p>
           <div class="work-links" data-stop-click>
             <button class="work-link-internal" data-open-case="clientwatch">View case study</button>
@@ -1083,10 +1102,10 @@
         </div>
       </div>
 
-      <div class="work-entry reveal" data-case="dashboard" role="button" tabindex="0">
+      <div class="work-entry reveal" data-case="dashboard" role="button" tabindex="0" aria-expanded="false" aria-label="View Live marketing performance dashboard case study">
         <div class="work-num">iii.</div>
         <div class="work-body">
-          <h3 style="font-weight: 400">Live marketing performance dashboard.</h3>
+          <h3>Live marketing performance dashboard.</h3>
           <p>A real-time KPI dashboard for Integrated Staffing that pulls live data from Google Sheets through a custom Apps Script endpoint. It tracks social media performance, website analytics, and quarter-over-quarter trends in one view, and replaced what used to be a manual monthly reporting process.</p>
           <div class="work-tags">
             <span class="tag">Analytics</span>
@@ -1158,7 +1177,7 @@
           <textarea id="message" name="message" placeholder="Budget, goals, timeline, whatever's useful…"></textarea>
         </div>
         <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
-        <p id="formStatus" style="font-size: 0.83rem; color: var(--terra); display: none; margin-top: 0.5rem;"></p>
+        <p id="formStatus" role="alert" aria-live="polite" style="font-size: 0.83rem; color: var(--terra); display: none; margin-top: 0.5rem;"></p>
       </form>
     </div>
   </section>
@@ -1498,6 +1517,7 @@ window.CASE_STUDIES = CASE_STUDIES;
   const drawerScroll = document.getElementById('drawerScroll');
   const drawerNum    = document.getElementById('drawer-num');
   const drawerKicker = document.getElementById('drawer-kicker');
+  const workEntries  = document.querySelectorAll('.work-entry');
 
   function renderCaseStudy(id) {
     const cs = window.CASE_STUDIES?.[id];
@@ -1506,7 +1526,7 @@ window.CASE_STUDIES = CASE_STUDIES;
     drawerNum.textContent    = cs.num;
     drawerKicker.textContent = cs.kicker;
 
-    const sectionsHTML = cs.sections.map((s) => `
+    const sectionsHTML = (cs.sections || []).map((s) => `
       <div class="cs-section">
         <h3 class="cs-section-title">${s.title}</h3>
         ${s.body || ''}
@@ -1554,7 +1574,10 @@ window.CASE_STUDIES = CASE_STUDIES;
     drawerBackdrop.classList.remove('open');
     setTimeout(() => {
       document.body.classList.remove('drawer-open');
-      document.querySelectorAll('.work-entry').forEach((item)=>item.classList.remove('active'));
+      workEntries.forEach((item) => {
+        item.classList.remove('active');
+        item.setAttribute('aria-expanded', 'false');
+      });
     }, 500);
   }
 
@@ -1563,16 +1586,18 @@ window.CASE_STUDIES = CASE_STUDIES;
       if (e.target.closest('[data-stop-click] a, [data-stop-click] button:not([data-open-case])')) {
         return;
       }
-      document.querySelectorAll('.work-entry').forEach((item)=>item.classList.remove('active'));
+      workEntries.forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-expanded', 'false'); });
       el.classList.add('active');
+      el.setAttribute('aria-expanded', 'true');
       openDrawer(el.dataset.case);
     });
     el.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        document.querySelectorAll('.work-entry').forEach((item)=>item.classList.remove('active'));
-      el.classList.add('active');
-      openDrawer(el.dataset.case);
+        workEntries.forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-expanded', 'false'); });
+        el.classList.add('active');
+        el.setAttribute('aria-expanded', 'true');
+        openDrawer(el.dataset.case);
       }
     });
   });
@@ -1581,8 +1606,11 @@ window.CASE_STUDIES = CASE_STUDIES;
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const parent = btn.closest('.work-entry');
-      document.querySelectorAll('.work-entry').forEach((item)=>item.classList.remove('active'));
-      if (parent) parent.classList.add('active');
+      workEntries.forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-expanded', 'false'); });
+      if (parent) {
+        parent.classList.add('active');
+        parent.setAttribute('aria-expanded', 'true');
+      }
       openDrawer(btn.dataset.openCase);
     });
   });
